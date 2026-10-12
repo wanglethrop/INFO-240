@@ -1,0 +1,321 @@
+ <!DOCTYPE html>
+<html lang="en-us">
+
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RWD Assignment</title>
+  <style>
+
+  /*****************************/
+  /*      READ THIS FIRST      */
+  /*******---------------*******/
+  /*Hello students - there are a lot of tips in this code to help you as you work through this assignment.  To begin read the assignment so that you know what the outcome will be.*/
+  /*FIRST TIP:  In CSS, WIDTH is not the same TOTAL WIDTH.  TOTAL WIDTH is the entire space that an element takes up.  WIDTH is the space for the content only - it does not include padding, borders and margins that go into TOTAL WIDTH. (you learned this from the "BOX MODEL" 😉) */
+
+  /*      SMALL SCREENS      */
+  /* These styles apply to small screens */
+  body {
+    background-color: #91101B;
+    color: #fff;
+  }
+
+  h2{
+  color: #DED945;
+  }
+
+  /*This defines the TOTAL width of the articles - remember TOTAL WIDTH = width + padding left&right + border left&right + margin left+right */
+  article{
+    width: 90%;
+    padding: 0px;
+    border: solid .25vw;
+    margin: auto;
+    /*The following will ensure that articles with floated content are displayed properly*/ 
+    overflow: auto;
+  }
+
+  img{
+  display: block;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  }
+
+  /*      MEDIUM SCREENS      */
+  /* This is our first media query.
+     The styles here apply to screens that are 600px wide or wider
+     This uses Layout Option A
+     Tip - all CSS properties and values are inherited from the CSS for the small screen.  This means that you only change the properties and values that need to change
+     Tip - all of the selectors have been included in this code.  You don't need to add any other selectors.  You will need to add the declarations (the properties and values) */
+  @media (min-width: 600px) {
+    /*Change the colors of body and h2 elements*/
+    body {
+    background-color: #DED945;
+    color: #91101B;
+    }
+
+    h2{
+    color: #189ADE;
+    }
+
+    /*Work on each article using the class name*/
+      .wood{
+        /*Change the TOTAL WIDTH to 70% (not just the width) and add then float left*/
+        /*Reminder TOTAL WIDTH = width + padding left&right + border left&right + margin left+right */
+        width: 50%;
+        padding: 2%;
+        border: 3vw;
+        margin: 5%;
+        float: left;
+      }
+
+      .paddle{
+        /*Change the TOTAL WIDTH to 30% (not just the width) and add float left*/
+        width: 20%;
+        padding: 1%;
+        border: 1.5vw;
+        margin: 2.5%;
+        float: left;
+      }
+
+      .iron{
+        /*Change the TOTAL WIDTH to 30% (not just the width) and add float left*/
+        /*Add clear:both to ensure that this article goes below all preceeding articles*/
+        width: 20%;
+        padding: 1%;
+        border: 1.5vw;
+        margin: 2.5%;
+        padding-top: 2%;
+        border-top: 3vw;
+        margin-top: 5%;
+        float: left;
+        clear: both;
+      }
+
+      .modern{
+        /*Change the TOTAL WIDTH to 70% (not just the width) and add float left*/
+        width: 50%;
+        padding: 2%;
+        border: 3vw;
+        margin: 5%;
+        float: left;
+      }      
+
+    /*NOW THE IMAGES for the medium screen - Let's work on each image individually.*/
+    /*Check the requirements to see what the width and float properties might be for each image.  Also, If you float an image, add padding on the side that meets the text*/
+      .wood img{
+        /*Add the css declaration(s) here*/
+        width: 100%;
+        height: 100%;
+        margin: 0%;
+        padding: 0%;
+        padding-bottom: 2%;
+      } 
+
+      .paddle img{
+        /*Add the css declaration(s) here*/
+        width: 100%;
+        height: 100%;
+        margin: 0%;
+        padding: 0%;
+        padding-bottom: 2%;
+      } 
+
+      .iron img{
+        /*Add the css declaration(s) here*/
+        width: 100%;
+        height: 100%;
+        margin: 0%;
+        padding: 0%;
+        padding-bottom: 2%;        
+      } 
+
+      .modern img{
+        /*Add the css declaration(s) here*/
+        width: 100%;
+        height: 100%;
+        margin: 0%;
+        padding: 0%;
+        padding-bottom: 2%;        
+      } 
+
+    /*Let's work on the text.  For this layout, there is too much text in .paddle and .iron but luckily we can take advantage of the class named "hide" that was added to specific paragraphs.  Use display: none; to hide the content*/
+      .paddle p.hide{
+      /*Add the css declaration here*/
+      display: none;
+      }
+
+      .iron p.hide{
+      /*Add the css declaration here*/
+      display: none;
+      }
+
+    /*This ensures that the footer will go after any floating elements*/
+    footer{
+      clear: both;
+    }
+
+    /*Test your code.  If the layout is working go back and a little padding to each article.  Add margins in the appropriate places to put space between articles.  Warning, if you add too much padding or margin the layout will fall apart*/
+
+
+  /*This is the end of the media query for medium screens*/
+  }
+
+  /*      LARGE SCREENS      */
+  /* This is our second media query
+     The styles here apply to screens that are 992px wide or wider
+     This uses Layout Option B
+     Tip - all CSS properties and values are inherited from the CSS for the small screen AND the medium screen.  This means that you only change the properties and values that need to change for the large screen.
+     Tip - all of the selectors have been included in this code.  You don't need to add any other selectors.  You will need to add the declarations (the properties and values) */
+
+  @media (min-width: 992px) {
+
+    /*Change the colors of body and h2 elements*/
+    body {
+      background-color: #14213D;
+      color: #E5E5E5;
+    }
+
+    h2{
+      color: #fca311;
+    }
+
+    /*Work on each article using the class name*/
+    .wood{
+      /*Does the width need to change?*/
+      /* Remember to work on TOTAL WIDTH - not just the width */
+      /* It might be helpful to put your calculations for TOTAL WIDTH in a comment*/
+      width: 80%;
+      padding: 2%;
+      border: 3vw;
+      margin: 5%;
+      float: left;
+    }
+
+    .paddle{
+      /*Does the width need to change?*/
+      width: 40%;
+      padding: 1%;
+      border: 1.5vw;
+      margin: 2.5%;
+      float: left;
+    }
+
+    .iron{
+      /*Does the width need to change?*/
+      /*We added clear:both for the medium screen.  We need to reverse it now using clear:none;*/
+      width: 15%;
+      padding: 1%;
+      border: 1.5vw;
+      margin: 2.5%;
+      float: right;    
+      clear: none;   
+    }
+
+    .modern{
+      /*Does the width need to change?*/
+      width: 15%;
+      padding: 1%;
+      border: 1.5vw;
+      margin: 2.5%;
+      float: right;       
+    }      
+
+  /*NOW THE IMAGES for the large screen - Let's work on each image individually.
+  /*Check the requirements to see what the width and float properties might be for each image.  Reminder: any properties you set for the medium screen will be inherited for this large screen layout.*/
+    .wood img{
+      /*Add the css declaration(s) here*/
+      width: 50%;
+      height: 50%;   
+    } 
+
+    .paddle img{
+      /*Add the css declaration(s) here*/     
+      width: 75%;
+      height: 75%;   
+    } 
+
+   /* .iron img{
+      Add the css declaration(s) here
+   
+    }*/
+
+    /*.modern img{
+      Add the css declaration(s) here    
+    }*/
+
+    /*Let's work on the text.  In the last media query for medium screens we hid text in specific paragraphs using display:none; In this large layout, we may want to bring back paragraphs by using display:block; and hide paragraphs using display:none; 
+    Reminder:  There are paragraphs in each article that have a class named "hide".  The seletors below target those paragraphs */
+
+    /*This selector is for the paragraphs with class "hide" that are children of paddle*/
+    .paddle p.hide{
+      /*Add the css declaration here to make paragraphs visible*/
+      display: block;
+      }
+
+    /*This selector is for the paragraphs with class "hide" that are children of modern*/
+    .modern p.hide{
+      /*Add the css declaration here to hide paragraphs*/
+      display: none;
+      }
+
+  /*This is the end of the media query for large screens*/
+  }
+
+  /*Test your code */
+
+  /*To help see the articles, we added borders at around line 30. You might want to remove them now to see if everything still looks good.  If you remove borders you willhave more room for widths,padding and margins 😉 */
+  </style>
+
+</head>
+
+<body>
+  <h1 style="text-align:center;">Nicholas Bullen</h1>
+
+  <article class="wood">
+    <h2>Wooden ships</h2>
+    <img src="https://webdevusa.net/06-CSSlayout/images/canoe.png" alt="An ancient canoe" width="300px" height="200px">
+
+    <p>The first boats were probably logboats, rafts and skinboats. The earliest logboats in Europe are 8-9000 years old. Early planked boats were often sewn or stitched together. Ships of Antiquity were assembled by the mortise and tenon fashion. From Medieval times, planks were fastened with wooden pegs or iron rivets.During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+    <p>The first boats were probably logboats, rafts and skinboats. The earliest logboats in Europe are 8-9000 years old. Early planked boats were often sewn or stitched together. Ships of Antiquity were assembled by the mortise and tenon fashion. From Medieval times, planks were fastened with wooden pegs or iron rivets.During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+    <p>The first boats were probably logboats, rafts and skinboats. The earliest logboats in Europe are 8-9000 years old. Early planked boats were often sewn or stitched together. Ships of Antiquity were assembled by the mortise and tenon fashion. From Medieval times, planks were fastened with wooden pegs or iron rivets.During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+  </article>
+
+  <article class="paddle">
+    <h2>Paddle ships</h2>
+    <img src="https://webdevusa.net/06-CSSlayout/images/paddleBoat.png" alt="Paddle Boat on the Mississippi" width="300px" height="200px">
+
+    <p>In 1807 the American Robert Fulton created the first steam-driven ship. It had a wooden hull and used paddles. Around 1830, ships propellers were gradually developed by several inventors, including Josef Ressel, John Patch and Francis Pettit Smith. During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+    <p class="hide">In 1807 the American Robert Fulton created the first steam-driven ship. It had a wooden hull and used paddles. Around 1830, ships propellers were gradually developed by several inventors, including Josef Ressel, John Patch and Francis Pettit Smith. During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+    <p class="hide">In 1807 the American Robert Fulton created the first steam-driven ship. It had a wooden hull and used paddles. Around 1830, ships propellers were gradually developed by several inventors, including Josef Ressel, John Patch and Francis Pettit Smith. During the next 150 years, steam or combustion engine ships would compete against sail. The last great sailing ships were in service in South America in the 1950s.</p>
+  </article>
+
+  <article class="iron">
+    <h2>Iron ships</h2>
+    <img src="https://webdevusa.net/06-CSSlayout/images/ironShip.png" alt="RMS Titanic" width="300px" height="200px">
+
+    <p>During the 19th century, iron and steel gradually took over the wooden hull production. Steel was preferred since it is stronger than iron, and from the 1870s, steel was used instead of the weaker wrought iron plates. The first iron and steel hulls were riveted, but from the 1940s and onwards, steel ships are usually welded. </p>
+    <p>During the 19th century, iron and steel gradually took over the wooden hull production. Steel was preferred since it is stronger than iron, and from the 1870s, steel was used instead of the weaker wrought iron plates. The first iron and steel hulls were riveted, but from the 1940s and onwards, steel ships are usually welded. </p>
+    <p class="hide">During the 19th century, iron and steel gradually took over the wooden hull production. Steel was preferred since it is stronger than iron, and from the 1870s, steel was used instead of the weaker wrought iron plates. The first iron and steel hulls were riveted, but from the 1940s and onwards, steel ships are usually welded. </p>
+  </article>
+
+  <article class="modern">
+    <h2>Modern Ships</h2>
+
+    <!-- The actual dimensions of this image are 960px * 640px -->
+    <img src="https://webdevusa.net/06-CSSlayout/images/yacht.jpeg" alt="Dream away" width="480px" height="320px">
+
+    <p>Modern yachts, like the private luxury yacht seen in this photo is made of fiberglass.  It all starts when the mold is created.  The mold is sprayed with gelcoat, then fiberglass cloth is applied, and then resin is used to saturate the fiberglass. When the resin cures, you have a hull of a boat. </p>
+    <p> The yacht shown here measures an incredible 180 metres, making her one of the longest private luxury yachts in the world. This floating palace was launched by Lurssen in 2013.  On its seven decks you'll find a helipad, a salon measuring 520m&#178; and, as rumour has it, even a private submarine and antimissile system. </p>
+    <p class="hide">This beauty was the highlight of last years Monaco Yacht Show and it's not difficult to see why. While passengers can pamper themselves in the gym or sauna, with a massage or at the hairdressers, at night the whirlpool turns into an open air party under the Monaco skies.  A one week holiday on board this yacht will cost one million dollars, but for only 175 million you can buy the whole thing.</p>
+    <p class="hide">This yacht measures an incredible 180 metres, making her one of the longest private luxury yachts in the world. This floating palace was launched by Lurssen in 2013.  On its seven decks you'll find a helipad, a salon measuring 520m&#178; and, as rumour has it, even a private submarine and antimissile system. </p>
+    <p class="hide">This beauty was the highlight of last years Monaco Yacht Show and it's not difficult to see why. While passengers can pamper themselves in the gym or sauna, with a massage or at the hairdressers, at night the whirlpool turns into an open air party under the Monaco skies.  A one week holiday on board this yacht will cost one million dollars, but for only 175 million you can buy the whole thing.</p>
+  </article>
+
+  <footer>
+    <p><strong>Source:</strong> Akesson, Per. "History of Shipbuilding", https://www.abc.se/~pa/bld/tradbld.htm.</p>
+  </footer>
+        
+</body>
+
+</html>

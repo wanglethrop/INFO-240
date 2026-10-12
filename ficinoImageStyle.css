@@ -1,0 +1,31 @@
+/*Makes all the images have automatic block margins*/
+.ficinoImageOriginal, .ficinoImageImpressionist, .ficinoImagePixelArt {
+    display: block;
+    margin: auto;
+ }
+/*Gives the original Ficino image a solid green border*/
+.ficinoImageOriginal {
+   border: 3px solid green ;
+   border-radius: 15px;
+}
+/*Gives the Impressionist Ficino image a grooved red border*/
+.ficinoImageImpressionist {
+    border: 10px groove red ;
+    border-radius: 20px;
+}
+/*Gives the Pixel Art Ficino image a dotted blue border*/
+.ficinoImagePixelArt {
+   border: 5px dotted blue ;
+   border-radius: 50px
+}
+/*Makes the bottom Ficino image responsive*/
+.ficinoImageOriginal01 {
+  max-width: 100%;
+  height: auto;
+}
+/*Makes the footer image appear reasonably*/
+footer {
+   background-image: url(images/coastalViews.jpg);
+   background-size: 800px 200px;
+   background-repeat: no-repeat
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Italian Wills & Testaments Finder</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; color: #18212b; }
+    input, button { font: inherit; padding: .7rem; }
+    input { width: min(540px, 100%); border: 1px solid #aaa; border-radius: 6px; }
+    button { background: #075985; color: white; border: 0; border-radius: 6px; cursor: pointer; }
+    article { border: 1px solid #d6dce2; border-radius: 8px; padding: 16px; margin: 14px 0; }
+    .tag { display: inline-block; padding: 2px 7px; border-radius: 20px; background: #e0f2fe; font-size: .8rem; }
+    a { color: #075985; }
+    .note { background: #fff7ed; border-left: 4px solid #ea580c; padding: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Italian Wills &amp; Testaments Finder</h1>
+  <p>Search archival catalogues for Italian testaments, estate records, and notarial documents.</p>
+
+  <form id="searchForm">
+    <input id="q" aria-label="Name, place, or keyword" placeholder="e.g., Petrarca OR Gondi Firenze" required>
+    <button>Search collections</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    const sources = [
+      {
+        name: "Sistema Archivistico Nazionale (Italy)",
+        type: "Italian archival portal",
+        url: q => `https://www.google.com/search?q=site%3Asan.beniculturali.it+${encodeURIComponent(q + " testamento OR testamenti OR atti notarili")}`
+      },
+      {
+        name: "Registro Generale dei Testamenti",
+        type: "Official certificate request — no public record search",
+        url: () => "https://www.giustizia.it/giustizia/it/mg_3_9_11.page?tab=e"
+      },
+      {
+        name: "U.S. National Archives Catalog",
+        type: "United States catalogue",
+        url: q => `https://catalog.archives.gov/search?q=${encodeURIComponent(q + " Italy OR Italian will OR testament")}`
+      },
+      {
+        name: "Penn Libraries — Italian Family Papers",
+        type: "United States manuscript collection",
+        url: q => `https://www.google.com/search?q=site%3Alibrary.upenn.edu+${encodeURIComponent(q + " will OR testament")}`
+      },
+      {
+        name: "Archives Hub",
+        type: "United Kingdom archival collections",
+        url: q => `https://archiveshub.jisc.ac.uk/search/archives?search=${encodeURIComponent(q + " Italian will testament")}`
+      },
+      {
+        name: "The National Archives catalogue",
+        type: "United Kingdom catalogue",
+        url: q => `https://discovery.nationalarchives.gov.uk/results/r?_q=${encodeURIComponent(q + " Italian will testament")}`
+      }
+    ];
+
+    document.querySelector("#searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const q = document.querySelector("#q").value.trim();
+      const results = document.querySelector("#results");
+
+      results.innerHTML = `
+        <h2>Results for “${escapeHtml(q)}”</h2>
+        <p class="note">
+          Results are links to participating catalogues. “Registro Generale dei
+          Testamenti” requires an official certificate request and cannot be searched here.
+        </p>
+        ${sources.map(source => `
+          <article>
+            <span class="tag">${source.type}</span>
+            <h3>${source.name}</h3>
+            <a href="${source.url(q)}" target="_blank" rel="noopener noreferrer">
+              Search this collection ↗
+            </a>
+          </article>
+        `).join("")}
+      `;
+    });
+
+    function escapeHtml(text) {
+      const el = document.createElement("div");
+      el.textContent = text;
+      return el.innerHTML;
+    }
+  </script>
+</body>
+</html>

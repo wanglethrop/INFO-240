@@ -1,0 +1,18 @@
+/* Styles the h1 element, which is used for the main heading of the page */
+h1 {
+    text-align: center;
+    color: rgb(23, 116, 159);
+    text-transform: uppercase;
+}
+/* Changes the background color of h2 elements, which are used for section headings */
+h2 {
+    background-color: rgba(128, 128, 128, 0.738);
+    font-family: Papyrus, "Brush Script MT", Monaco;
+}
+/* Styles the paragraph text with a serif font, sets the font size and line height, and adds spacing below each paragraph */
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}

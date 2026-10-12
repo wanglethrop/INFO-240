@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>European Wills &amp; Testaments Finder</title>
+  <link rel="stylesheet" href="europeanWillsTestamentsStyle.css" />
+  <script src="europeanWillsTestamentsScript.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>European Wills &amp; Testaments Finder</h1>
+      <p>
+        Search archival catalogues, manuscript collections, probate indexes,
+        and digitized historical sources across Europe and North America.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <form id="searchForm">
+      <div>
+        <label for="query">Person, family, place, or keyword</label>
+        <input
+          id="query"
+          type="search"
+          placeholder="Example: Francesco Petrarca, Gondi Firenze, or Medici"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="country">Likely country</label>
+        <select id="country">
+          <option value="Auto">Auto-detect from name</option>
+          <option value="Italy">Italy</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+          <option value="Spain">Spain</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+        </select>
+      </div>
+
+      <div>
+        <label>&nbsp;</label>
+        <button type="submit">Search databases</button>
+      </div>
+    </form>
+
+    <section id="results" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    This tool creates catalogue searches; it does not download, scrape, or
+    reproduce archive records.
+  </footer>
+</body>
+</html>

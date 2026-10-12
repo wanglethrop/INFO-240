@@ -1,0 +1,52 @@
+Full name: Nicholas Bullen
+Course: INFO 240, Fall Semester, 2026
+Assignment name: Module 4, CSS Structure and Selectors
+W3Spaces URL: https://nicholasbullensanjose.w3spaces.com
+
+===================================================================================================================
+
+File Name: jakartaStyle.css
+
+------------------------------------------------------------------------------------------------------------------
+
+/*  CSS rule that applies text-indent:10%; to two specific paragraphs: one paragraph has the class name "eat-drink", the 
+other paragraph has the class name "visit". */
+h1 {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid green;
+    margin: auto;
+    text-align: center;
+}
+/* CSS rule that applies text-indent:10%; to two specific paragraphs: one paragraph has the class name "eat-drink", the 
+other paragraph has the class name "visit". */
+p.eat-drink , p.visit {
+    text-indent: 10px;
+}
+/*  CSS rule that changes the text color of all of the elements that are named "visit". */
+.visit {
+    color: red;
+}
+/* CSS rule that uses nth-child to apply a style to the third item in the list of restaurants.  Has two declarations, the first sets
+ the text to uppercase, the second sets the text color to blue. */
+.restaurants :nth-child(3) {
+    text-transform: uppercase;    
+    color: blue;
+}
+/* CSS rules that target the links on the page.  Sets the colors as follows:
+ - The link state will be set to green
+ - The visited state will be set to blue
+ - The hover state will have a background-color of black
+ - The active state will be set to red */
+a:link { 
+    color: green; 
+}
+a:visited { 
+    color: blue; 
+}
+a:hover { 
+    color: black; 
+}
+a:active { 
+    color: red; 
+}
