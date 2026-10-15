@@ -2,15 +2,15 @@
 other paragraph has the class name "visit". */
 h1 {
     width: 50%;
-    padding: 10px;
-    border: 2px solid green;
+    padding: 2%;
+    border: 1% solid green;
     margin: auto;
     text-align: center;
 }
 /* CSS rule that applies text-indent:10%; to two specific paragraphs: one paragraph has the class name "eat-drink", the 
 other paragraph has the class name "visit". */
 p.eat-drink , p.visit {
-    text-indent: 10px;
+    text-indent: 10%;
 }
 /*  CSS rule that changes the text color of all of the elements that are named "visit". */
 .visit {
@@ -34,7 +34,7 @@ a:visited {
     color: blue; 
 }
 a:hover { 
-    color: black; 
+    background-color: black; 
 }
 a:active { 
     color: red; 
