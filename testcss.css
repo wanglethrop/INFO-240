@@ -1,10 +1,23 @@
-.fixed {
-position: fixed;
-top: 0;
-right: 0;
-width: 300px;
-color: #fff;
-background-color: #000;
-border: 3px solid #0f0;
-text-align: center;
-}
+/* This css applies to the wrapper div */ 
+.wrapper{
+      /* Display this div as a grid */
+      display: grid;
+      /* Create two columns, each with a width of auto */
+      grid-template-columns: auto auto;
+      /* Create two rows each defined as 1fr (fractional unit) */
+      grid-template-rows: 1fr 1fr;
+      /* The space between each row and column (print designers call this the gutter) */
+      gap: 10px;
+      /* Set the background color to red */
+      background-color: #f00;
+      /* Add 10px of padding around the grid */
+      padding: 10px;
+    }
+
+/* This css applies to each div that is a child of .wrapper */
+.wrapper > div {
+      /* Each child div has a white background color */
+      background-color: rgb(255, 255, 255);
+      /* The text within each child div is centered */
+      text-align: center;
+    }
